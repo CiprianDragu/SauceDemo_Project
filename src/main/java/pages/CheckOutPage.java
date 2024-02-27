@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CheckOutPage extends BasePage {
     @FindBy(css = ".subheader")
-    WebElement checkOutTile;
+    WebElement checkOutTitle;
     @FindBy(css = "#first-name")
     WebElement firstName;
     @FindBy(css = "#last-name")
@@ -22,8 +22,8 @@ public class CheckOutPage extends BasePage {
         super(driver);
     }
 
-    public String checkOutTilePage() {
-        return checkOutTile.getText();
+    public String checkOutTitlePage() {
+        return checkOutTitle.getText();
     }
 
     public void inputFirsName() {

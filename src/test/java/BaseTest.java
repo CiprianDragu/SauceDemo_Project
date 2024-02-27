@@ -62,10 +62,10 @@ public class BaseTest {
         Assertions.assertEquals(expectedTitlePage, actualTitlePage);
         yourCartPage.clickCheckoutButton();
         CheckOutPage checkOutPage = new CheckOutPage(driver);
-        checkOutPage.checkOutTilePage();
-        String actualPageTile = checkOutPage.checkOutTilePage();
-        String expectedPageTile = "Checkout: Your Information";
-        Assertions.assertEquals(expectedPageTile, actualPageTile);
+        checkOutPage.checkOutTitlePage();
+        String actualPageTitle = checkOutPage.checkOutTitlePage();
+        String expectedPageTitle = "Checkout: Your Information";
+        Assertions.assertEquals(expectedPageTitle, actualPageTitle);
         checkOutPage.inputFirsName();
         checkOutPage.inputLastName();
         checkOutPage.inputPostalCode();
