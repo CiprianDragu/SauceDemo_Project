@@ -1,5 +1,6 @@
 import data.TestData;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,27 +8,27 @@ import org.openqa.selenium.edge.EdgeDriver;
 import pages.*;
 
 public class BaseTest {
-    @Test
-    public void goToWebsiteTest() {
-        WebDriver driver = new EdgeDriver();
+    WebDriver driver;
+
+    @BeforeEach
+    public void setUp() {
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get(TestData.URL);
     }
 
     @Test
+    public void goToWebsiteTest() {
+    }
+
+    @Test
     public void verifyPageLogoTest() {
-        WebDriver driver = new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.get(TestData.URL);
         HomePage homePage = new HomePage(driver);
         Assertions.assertTrue(homePage.isPageLogoDisplayed());
     }
 
     @Test
     public void loginTest() {
-        WebDriver driver = new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.get(TestData.URL);
         HomePage homePage = new HomePage(driver);
         homePage.insertUserName();
         homePage.insertPassword();
@@ -39,9 +40,6 @@ public class BaseTest {
 
     @Test
     public void endToEndTest() {
-        WebDriver driver = new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.get(TestData.URL);
         HomePage homePage = new HomePage(driver);
         homePage.insertUserName();
         homePage.insertPassword();
